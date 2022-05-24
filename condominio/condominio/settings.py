@@ -15,7 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -26,6 +27,8 @@ SECRET_KEY = 'django-insecure-rydb4--@+hru*90aqq(zbmx@4sd3_h%mmj#^oz&*vwwvj_5sne
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
 
 
 # Application definition
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'condominio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE' : 'django.db.backends.mysql',
+        'NAME': 'condominio',
+        'USER': 'duoc',
+        'PASSWORD': 'camilo123',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

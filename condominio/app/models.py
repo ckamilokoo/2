@@ -57,13 +57,13 @@ class reserva(models.Model):
 
 class pago_reserva(models.Model):
     reserva=models.ForeignKey(reserva,on_delete=models.PROTECT)
-    forma_pago=models.CharField(max_length=100000)
+    forma_pago=models.TextField(max_length=65532,null=True)
     def __str__(self):
             return self.forma_pago
 
 class pago_estado(models.Model):
     estado_cuenta=models.ForeignKey(estado_cuenta,on_delete=models.PROTECT)
-    forma_pago=models.CharField(max_length=100000)
+    forma_pago=models.TextField(max_length=65532,null=True)
     def __str__(self):
             return self.forma_pago
 
