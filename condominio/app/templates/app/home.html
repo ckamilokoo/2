@@ -1,0 +1,121 @@
+{% extends 'app/base.html'%}
+{%block contenido %}
+<link href="https://fonts.cdnfonts.com/css/dragonLord" rel="stylesheet">
+   
+<div class="container-fluid rounded" >
+  <div class="container-fluid rounded">
+    <div class="row">
+  </div>
+</div>
+<header>
+  <style>
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 105%;
+      min-height: 100%;
+      transform: translateX(calc((100% - 100vw) / 2));
+      z-index: -2;
+    }
+    body {
+      position: relative;
+      margin: 0;
+    }
+    .sect {
+      width: 100%;
+      min-height: 500px;
+    }
+  </style>
+</header>
+<video src="https://carontestudio.com/img/f4.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg"></video>
+  <section id="sect1" class="sect">
+  <div class="row">
+    <h1 class="text-light " style="text-align:center">nuestra comunidad </h1>
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://vitacuracultura.cl/wp-content/uploads/2022/03/FeriaPulgasInterior-540x457.jpg" class="d-block w-100" alt="..."width="100" height="500">
+            <h3 class="text-light " style="text-align:center">feria de las pulgas </h3>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.losalfares.net/wp-content/uploads/2019/07/los-alfares_-campana_imagen-rrss-900x900-1.jpg" class="d-block w-100" alt="..." width="100" height="500">
+            <h3 class="text-light " style="text-align:center">concurso de mascotas </h3>
+          </div>
+          <div class="carousel-item">
+            <img src="https://pbs.twimg.com/media/EB1WmJsW4AAAL7g?format=jpg&name=large" class="d-block w-100" alt="..." width="100" height="500">
+            <h3 class="text-light " style="text-align:center">actividades recreativas </h3>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <br>
+  <div class="row">
+    <h1 class="text-light" style="text-align:center">notificaciones </h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for n in notificaciones %}
+      <div class="col">
+        <div class="card h-100">
+          {% if n.imagen %}
+          <img src="{{ n.imagen.url}}" height="300px" width="300px" class="card-img-top" alt="...">
+          {% endif %}
+          <div class="card-body t">
+            <h5 class="card-title">{{n.titulo}} </h5>
+            <p class="card-text">{{n.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <h1 class="text-light" style="text-align:center">areas comunes </h1>
+    <br>
+    <div class="row ">
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://s3.sa-east-1.amazonaws.com/media.reistock.com/wp-content/uploads-mkt-wp/sites/12/2019/12/09115634/edificio-andesleones03.jpg" height="100%" width="100%" alt="">
+            <br>
+            <p>quinchos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://idea.cl/web/wp-content/uploads/2019/10/El-Descanso_piscina-2.jpg" height="100%" width="100%" alt="">
+            <br>
+            <p>piscina</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://www.altolareina.cl/wp-content/uploads/2018/04/OVA_ALR_EC_Gimnasio.jpg" height="100%" width="100%" alt="">
+            <br>
+            <p>sala comun</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+{% endblock %}

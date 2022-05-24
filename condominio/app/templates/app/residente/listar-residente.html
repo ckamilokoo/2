@@ -1,0 +1,36 @@
+{% extends 'app/base.html'%}
+{% load static %}
+{%block contenido %}
+<br>
+<br>
+<div class="container-fluid">
+<div class="card">
+    <div class="card-body">
+        <h2>Listado residentes</h2>
+        <hr>
+
+    <table class="table table-striped table-hover table-responsive-sm">
+        <tr>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>correo</th>
+            <th>numero departamento</th>
+            <th>opciones</th>
+        </tr>
+        {% for n in residentes %}
+        <tr>
+            <td>{{ n.nombre}}</td>
+            <td>{{ n.apellido}}</td>
+            <td>{{ n.correo}}</td>
+            <td>{{ n.n_departamento}}</td>
+            <td><a href="{% url 'modificar_residente' n.id %}" class="btn btn-info btn-sm">modificar</a></td>
+            <td><a href="{% url 'eliminar_residente' n.id %}" class="btn btn-danger btn-sm">eliminar</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+        </tr>
+    </table>
+    <td><a href="{% url 'agregar_residente'  %}" class="btn btn-danger btn-sm">agregar</a></td>
+</div>
+
+{% endblock%}

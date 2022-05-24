@@ -1,0 +1,29 @@
+{% extends 'app/base.html'%}
+{%block contenido %}
+<br>
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Editar residente</h2>
+                    <form action="" method="post"  class="formulario_contacto" method="POST" enctype="multipart/form-data">
+                        {% csrf_token%}
+                        <br>
+                        {{ form }}
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <input type="reset" value="cancelar" class="btn btn-secondary">
+                            &nbsp;
+                            <input type="submit" value="editar" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+                {{mensaje}}
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+{% endblock%}
